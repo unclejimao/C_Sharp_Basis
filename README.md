@@ -1,6 +1,6 @@
 # C_Sharp_Basis
-## C#入门
-### 见识C#编写的各类应用程序
+# C#入门
+## 见识C#编写的各类应用程序
 
 - Console
 - WPF (Windows Presentation Foundation)
@@ -12,3 +12,19 @@
 - Windows Phone Application
 - Cloud (Windows Azure)
 - WF (Workflow Foundation)
+
+## 剖析 Hello World 程序
+### 类 class
+类是构成程序的主体
+### 名称空间 namespace
+名称空间以树形结构组织类（和其他类型）
+
+  - 例如，Button类和Path类
+
+### 类库的引用
+
+- 类库引用是使用名称空间的基础
+  - 不同类型的项目默认引用不同的类库
+- DLL引用（黑盒引用，没有源代码）
+  - NuGet简介
+- 项目引用（白盒引用，有源代码）
