@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="StoreHelloWorld.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StoreHelloWorld"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button x:Name="ButtonSayHello" Content="Click Me" HorizontalAlignment="Left" Margin="474,10,0,0" VerticalAlignment="Top" Width="168" Background="#3320AB68" Click="ButtonSayHello_Click"/>
+        <TextBox x:Name="textBoxShowHello" HorizontalAlignment="Left" Margin="10,10,0,0" Text="" VerticalAlignment="Top" Width="458" Background="#661D9EE0"/>
+
+    </Grid>
+</Page>
