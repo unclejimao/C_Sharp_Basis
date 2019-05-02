@@ -11,7 +11,16 @@ namespace ClassAndInstance
     {
         static void Main(string[] args)
         {
-            (new Form()).ShowDialog();
+            //(new Form()).Text="My Form";
+            //(new Form()).ShowDialog();
+            Form myForm = new Form();
+            Form myForm1;
+            myForm1 = myForm;
+            myForm.Text = "MyForm";
+            myForm.ShowDialog();
+            myForm1.Text = "I changed it";
+            myForm.ShowDialog();
+            //上面几行代码说明赋值操作符“=”使得两个实例引用了同一个对象，类似于C中的指针
         }
     }
 }
