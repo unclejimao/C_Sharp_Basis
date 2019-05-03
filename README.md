@@ -144,7 +144,7 @@ Binding指的是编译器如何把成员与类或者对象关联起来
 
 
     |上|下|文|
-    |-|-|
+    |-|-|-|
     |add|alias|ascending|
     |async|await|by|
     |descending|dynamic|equals|
