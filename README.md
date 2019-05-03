@@ -206,3 +206,75 @@ Binding指的是编译器如何把成员与类或者对象关联起来
             /*此处是块注释内容*/
             
             /*/*块注释无法嵌套,这种做法是错误的*/*/
+
+## 类型（Type）
+
+- 又名数据类型（Data Type）
+    - A data type is a homogeneous collection of values, effectively presented, equipped with a set of operations which manipulate these values.
+    - 是数据在内存中存储的“型号”
+    - 小内存容纳大尺寸数据会丢失精度、发生错误
+    - 大内存容纳小尺寸数据会导致浪费
+    - 编程语言的数据类型与数学的数据类型不完全相同
+- 强类型语言与弱类型语言的比较
+  - C语言示例：if条件
+
+       C语言中没有bool类型，下面的语句可以在C语言中编译过去。
+
+       事实上只要if()判断条件不为0，都会判定为真，去执行if{}语句块。
+        
+       ```C
+        if(x=100)
+        {
+            printf("It's OK\n");
+        }
+       ```
+       但是C#中有bool类型，if()判断条件如果不是bool类型的值，编译不过去：
+
+       ```C#
+        if(x=100)
+        {
+            Console.WriteLine("It's OK\n");
+        }
+        //这句在C#中会报错
+       ```
+  - JavaScript示例：动态类型
+
+       下面这句在JavaScript中不会报错，即使给原来是整数的变量赋值一个字符串：
+
+    ```JavaScript
+    function ButtonClicked(){
+        var myVar=100;
+        myVar="Mr. Okay!";
+        alert(myVar);
+    }  
+    ```
+  - C#语言对弱类型/动态类型的模仿
+
+    C#是强类型语言，但是它对弱类型语言的动态类型进行了模仿
+
+    在C#中，与JavaScript的var类似的关键字是dynamic
+
+    **C#中的var和JavaScript中的var完全不同，不要搞混了**
+
+    ```C#
+    dynamic myVar=100;
+    Console.WriteLine(myVar);
+    myVar="Mr. Okay!";
+    Console.WriteLine(myVar);
+    //上述语句在C#中可以顺利通过编译并执行
+    //JavaScript中用var声明的变量可以对其进行任意赋各种类型值
+    //而C#中的var声明并赋值的变量，编译器会自动检测你赋的值的类型，之后就固定认为该变量类型就是其初值的类型，无法再对其赋其他类型的值。
+    ```
+### 类型再C#中的作用
+**一个C#类型中所包含的信息**
+  - 存储此类型变量所需的空间大小
+  - 此类型值的最大、最小范围
+  - 此类型所包含的成员，如方法、属性、事件等
+  - 此类型是由什么基类派生而来
+  - 程序运行时，此类型变量分配到内存什么位置
+    - Stack简介
+    - Stack overflow
+    - Heap简介
+    - 使用Performance Monitor查看进程的堆内存使用量
+    - 关于内存泄漏
+  - 此类型所允许的操作或者运算
