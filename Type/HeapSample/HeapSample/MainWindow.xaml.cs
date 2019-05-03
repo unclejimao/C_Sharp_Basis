@@ -24,5 +24,27 @@ namespace HeapSample
         {
             InitializeComponent();
         }
+
+        List<Window> winList;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void ButtonRelease_Click(object sender, RoutedEventArgs e)
+        {
+            winList.Clear();
+        }
+
+        private void ButtonConsume_Click(object sender, RoutedEventArgs e)
+        {
+
+            winList = new List<Window>();
+            for (int i = 0; i < 15000; i++)
+            {
+                Window w = new Window();
+                winList.Add(w);
+            }
+        }
     }
 }

@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="ButtonConsume" Content="Consume Heap Memory" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="380" Height="160" Click="ButtonConsume_Click" FontSize="20" Background="#CCB65353"/>
+        <Button x:Name="ButtonRelease" Content="Release Heap Memory" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Width="380" Height="160" FontSize="22" Background="#992FB452" Click="ButtonRelease_Click"/>
+
     </Grid>
 </Window>
