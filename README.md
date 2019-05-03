@@ -105,3 +105,102 @@
 - 关于“绑定”（Binding）
 
 Binding指的是编译器如何把成员与类或者对象关联起来
+
+## C#语言基本元素概览
+### C#语言基本元素
+- 标记（Token）
+  - **关键字（KeyWord）**
+  
+    关键字是预定义的保留标识符，对编译器有特殊意义。 除非前面有 @ 前缀，否则不能在程序中用作标识符。 例如，@if 是有效标识符，而 if 则不是，因为 if 是关键字。
+
+    第一个表列出了是 C# 程序任意部分中的保留标识符的关键字。
+
+    |请|记|住|我|
+    |-|-|-|-|
+    |abstract|as|base|bool|
+    |break|byte|case|catch|
+    |char|checked|class|const|
+    |continue|decimal|default|delegate|
+    |do|double|else|enum|
+    |event|explicit|extern|false|
+    |finally|fixed|float|for|
+    |foreach|goto|if|implicit|
+    |in|int|interface|internal|
+    |is|lock|long|namespace|
+    |new|null|object|operator|
+    |out|override|params|private|
+    |protected|public|readonly|ref|
+    |return|sbyte|sealed|short|
+    |sizeof|stackalloc|static|string|
+    |struct|switch|this|throw|
+    |true|try|typeof|uint|
+    |ulong|unchecked|unsafe|ushort|
+    |using|using static|virtual|void|
+    |volatile|while|
+    
+    **上下文关键字**
+    
+     上下文关键字仅在一部分程序上下文中有特殊含义，可以在相应上下文范围之外用作标识符。 一般来说，C# 语言中新增的关键字会作为上下文关键字添加，以免破坏用旧版语言编写的程序。
+
+    |上|下|文|
+    |-|-|
+    |add|alias|ascending|
+    |async|await|by|
+    |descending|dynamic|equals|
+    |from|get|global|
+    |group|into|join|
+    |let|nameof|on|
+    |orderby|partial（类型）|partial（方法）|
+    |remove|select|set|
+    |值|var|when（筛选条件）|
+    |where（泛型类型约束）|where（查询子句）|yield|
+  - 操作符（Operator）
+  - 标识符（Identifier）
+
+    标识符是程序员给变量、类等起的名字。无论任何标识符，在命名时应赋予其意义，方便别人读懂
+
+    - 什么是合法的标识符？
+      - 不与关键字冲突。如果想用关键字作为标识符，需要在关键字前面加@符号
+      - 可以使用字母、下划线、数字，但是不能用数字开头
+    - 大小写规范
+      - 驼峰法：第一个单词首字母小写，后续单词首字母大写，如myVariable。驼峰法在对变量命名时使用
+      - Pascal法：每个单词的首字母都大写，如MyFirstClass。Pascal法在对类、方法、名称空间等命名时使用
+    - 命名规范
+      - 对类命名时，类名应该是名词或名词复数
+      - 对类的成员命名时，属性名应该是名词或名词复数；方法名应该是动词或动词短语
+  - 标点符号
+
+    是符号但不参与运算。比如“{”、“}”和“;”。每个语句后面都应该有一个分号“;”。
+  - 文本（字面值）
+    - 整数
+
+            int x=3;
+            long y=30L;     //后缀L或者l表示它是一个长整型变量 
+
+    - 实数
+
+            float m=0.2F;       //后缀F或者f表示单精度浮点数类型，声明float类型后面必须加后缀
+            double n=0.1D;      //后缀D或d表示它是一个双精度浮点数变量
+
+    - 字符
+
+            char c='c';         //使用单引号引起来，只能是一个字符
+    - 字符串
+
+            string s="c";       //双引号，可以是0个、1个、多个字符
+    - 布尔
+
+            bool b1=true;
+            bool b2=false;
+    - 空（null）
+
+            string s=null;
+- 注释与空白
+  - 单行
+
+            //双斜杠后面是注释内容
+  - 多行（块注释）
+
+            /*此处是块注释内容*/
+            
+            /*/*块注释无法嵌套,这种做法是错误的*/*/
