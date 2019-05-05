@@ -278,3 +278,26 @@ Binding指的是编译器如何把成员与类或者对象关联起来
     - 使用Performance Monitor查看进程的堆内存使用量
     - 关于内存泄漏
   - 此类型所允许的操作或者运算
+
+# C#语言的类型系统
+## C#五大数据类型
+- 类（classes）：如Windows、Form、Console、String
+- 结构体（Structures）：如Int32、Int64、Single、Double
+- 枚举（Enumerations）：如HorizontalAlignment、Visibility
+- 接口（Interfaces）
+- 委托（Delegates）
+
+## C#类型的派生谱系
+
+```mermaid
+graph LR
+
+A[Object] ---B1(引用类型)
+A ---B2(值类型)
+B1 ---C1(类)
+B1 ---C2(接口)
+B1 ---C3（委托）
+
+B2 ---C4（结构体）
+B2 ---C5（枚举）
+```
