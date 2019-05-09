@@ -401,7 +401,8 @@ Binding指的是编译器如何把成员与类或者对象关联起来
         ![](https://raw.githubusercontent.com/unclejimao/picBed/master/MemoryOfConstructorWithoutPara.png?token=ALNAEY7GASGETEUZHLH3NDS42P2HW)
     - 对于使用自定义构造器（带参数）的类来说，以
         ```C#
-            class Student
+        Student student = new Student(1 , "Mr. Okay");
+        class Student
         {
             public Student(int initId,string initName)
             {
@@ -422,5 +423,10 @@ Binding指的是编译器如何把成员与类或者对象关联起来
 
 
 ### 方法的重载（Overlord）
+- 声明带有重载的方法
+  - 方法签名（method signature）由方法的名称、类型形参的个数和他每一个形参（从左到右的顺序）的类型和种类（值、引用或输出）组成。
+    - 方法签名不包含返回类型
+  - 实例构造函数签名由它的每一个形参（从左到右的顺序）的类型和种类（值、引用或输出）组成。
+  - 重载决策（到底调用哪一个重载）：用于在给定了参数列表及一组候选函数成员的情况下，选择一个最佳函数成员来实施调用
 ### 对方法进行debug
 ### 方法的调用与栈
