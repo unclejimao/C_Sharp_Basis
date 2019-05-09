@@ -10,22 +10,31 @@ namespace ConstructorExample
     {
         static void Main(string[] args)
         {
-            Student student = new Student(007,"Cobe");
-            Console.WriteLine(student.ID);
-            Console.WriteLine(student.Name);
-            Console.WriteLine("====================");
-            Student student2 = new Student();
-            Console.WriteLine(student2.ID);
-            Console.WriteLine(student2.Name);
-
-            Calulator c = new Calulator();
-            int r = c.Add(1, 2, 3);
-            Console.WriteLine("====================");
-            Console.WriteLine(r);
+            double result = Calculator.GetConeVolume(100, 100);
         }
     }
 
-    class Calulator
+    class Calculator
+    {
+        public static double  GetCircleArea(double r)
+        {
+            return Math.PI * r * r;
+        }
+
+        public static double GetCylinderVolume(double h,double r)
+        {
+            double a = GetCircleArea(r);
+            return h * a;
+        }
+
+        public static double GetConeVolume(double h,double r)
+        {
+            double cv = GetCylinderVolume(h, r);
+            return cv / 3;
+        }
+    }
+
+    class MathCalulator
     {
         public int Add(int a,int b)
         {
