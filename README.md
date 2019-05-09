@@ -398,7 +398,7 @@ Binding指的是编译器如何把成员与类或者对象关联起来
       - 实例存放在内存的堆中，根据类的成员分配足够的连续空间，并将地址写入栈中保存对应引用变量的内存
       - 然后构造器对内存中的实例部分进行初始化，根据类的各字段类型进行内存划分，比如int划分4个字节、short划分2个字节，并将所有位初始化为0
       - 如下图所示
-        ![](https://raw.githubusercontent.com/unclejimao/picBed/master/MemoryOfConstructorWithoutPara.png?token=ALNAEY7GASGETEUZHLH3NDS42P2HW)
+        ![](https://raw.githubusercontent.com/unclejimao/pictureBed/master/MemoryOfConstructorWithoutPara.png)
     - 对于使用自定义构造器（带参数）的类来说，以
         ```C#
         Student student = new Student(1 , "Mr. Okay");
@@ -419,9 +419,8 @@ Binding指的是编译器如何把成员与类或者对象关联起来
         -  在栈中为引用变量student分配4个字节，用来存储实例在堆中的地址
         -  在堆中为实例分配足够的连续空间，并将地址交给堆中的引用变量。在此例中，构造器有两个类型的参数，其中int是值类型，直接分配4个字节，并根据构造器进行初始化；string是引用类型，所有要分配4个字节用来存放地址，并且在堆中另外寻找可以存放string初始化内容的内存空间，进行初始化，并将地址交给string引用变量保存
         -  如下图所示
-            ![](https://raw.githubusercontent.com/unclejimao/picBed/master/MemoryOfConstructorWithPara.png?token=ALNAEYYGBHMLKLGSWTMB7DS42P2SC)
-
-
+            
+        ![](https://raw.githubusercontent.com/unclejimao/pictureBed/master/MemoryOfConstructorWithPara.png)
 ### 方法的重载（Overlord）
 - 声明带有重载的方法
   - 方法签名（method signature）由方法的名称、类型形参的个数和他每一个形参（从左到右的顺序）的类型和种类（值、引用或输出）组成。
