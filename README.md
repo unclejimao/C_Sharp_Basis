@@ -452,5 +452,5 @@ Binding指的是编译器如何把成员与类或者对象关联起来
 **操作符的本质是函数（即算法）的“简记法”**
 - 操作符不能脱离与它相关联的数据类型
   - 可以说操作符就是与固定数据类型相关联的一套基本 算法的简记法
-  - 示例：[为自定义数据类型创建操作符]()
+  - 示例：[为自定义数据类型创建操作符](https://github.com/unclejimao/C_Sharp_Basis/blob/master/Operator/CreatOperator/CreatOperator/Program.cs)
     
