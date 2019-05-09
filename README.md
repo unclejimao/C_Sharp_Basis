@@ -380,8 +380,47 @@ Binding指的是编译器如何把成员与类或者对象关联起来
   - 构造器命名必须和声明的类名相同，后跟圆括号包裹的参数列表（para A，para B……）
   - 构造器内部使用this关键字代表当前类
   - 在类的内部输入ctor，然后两下tab键，可以自动生成构造器框架
-  - 可以通过声明相同名称的方法进行函数重载，以给一个类多种构造器选择
+  - 可以通过声明相同名称的方式进行方法重载，以给一个类多种构造器选择
 - 构造器的内存原理
+
+    ```C#
+    Student stu = new Student();
+    
+    //对于该语句的解释
+    //首先使用Student创建一个Student类的引用变量stu；
+    //使用new Student创建Student类的一个实例；
+    //圆括号()是方法调用操作符，表示调用Student类的构造器来构造实例的内部结构；
+    //等号=将构造好的实例赋值给stu；
+    //通过以上操作我们就得到了一个Student类的实例stu
+    ```
+    - 对于使用默认构造器（不带参数）的类来说，创建一个类实例的过程如下：
+      - 由于类是引用变量，因此栈内存放的是实例在内存空间的地址，因此首先在栈内给引用变量分配一个4字节空间用于存放实例地址
+      - 实例存放在内存的堆中，根据类的成员分配足够的连续空间，并将地址写入栈中保存对应引用变量的内存
+      - 然后构造器对内存中的实例部分进行初始化，根据类的各字段类型进行内存划分，比如int划分4个字节、short划分2个字节，并将所有位初始化为0
+      - 如下图所示
+        ![](https://raw.githubusercontent.com/unclejimao/picBed/master/MemoryOfConstructorWithoutPara.png?token=ALNAEY7GASGETEUZHLH3NDS42P2HW)
+    - 对于使用自定义构造器（带参数）的类来说，以
+        ```C#
+            class Student
+        {
+            public Student(int initId,string initName)
+            {
+                this.ID = initId;
+                this.Name = initName;
+            }
+       
+            public int ID;
+            public string Name;
+        }
+        ``` 
+        为例，创建一个类实例的过程如下：
+
+        -  在栈中为引用变量student分配4个字节，用来存储实例在堆中的地址
+        -  在堆中为实例分配足够的连续空间，并将地址交给堆中的引用变量。在此例中，构造器有两个类型的参数，其中int是值类型，直接分配4个字节，并根据构造器进行初始化；string是引用类型，所有要分配4个字节用来存放地址，并且在堆中另外寻找可以存放string初始化内容的内存空间，进行初始化，并将地址交给string引用变量保存
+        -  如下图所示
+            ![](https://raw.githubusercontent.com/unclejimao/picBed/master/MemoryOfConstructorWithPara.png?token=ALNAEYYGBHMLKLGSWTMB7DS42P2SC)
+
+
 ### 方法的重载（Overlord）
 ### 对方法进行debug
 ### 方法的调用与栈
