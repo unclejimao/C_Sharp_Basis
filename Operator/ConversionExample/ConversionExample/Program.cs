@@ -17,11 +17,33 @@ namespace ConversionExample
             //int y = Convert.ToInt32(str2);
             //Console.WriteLine(x + y);
 
-            Teacher t = new Teacher();
-            Human h = t;
-            Animal a = h;
-            a.Eat();
+            //Teacher t = new Teacher();
+            //Human h = t;
+            //Animal a = h;
+            //a.Eat();
+
+            Stone stone = new Stone();
+            stone.Age = 5000;
+            Monkey wukongSun = (Monkey)stone;
+            Console.WriteLine(wukongSun.Age);
         }
+    }
+
+    class Stone
+    {
+        public int Age;
+
+        public static explicit operator Monkey(Stone stone)
+        {
+            Monkey m = new Monkey();
+            m.Age = stone.Age / 500;
+            return m;
+        }
+    }
+
+    class Monkey
+    {
+        public int Age;
     }
 
     class Animal
